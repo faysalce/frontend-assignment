@@ -1,7 +1,17 @@
+
+import React from "react";
 import logo from './logo.svg';
 
-const App = () => (
-	<img src={logo} alt="Timescale" />
-)
+import Home from "./Home";
+import { GlobalStyle } from "./GlobalStyle";
+
+const App = () => {
+  return (
+    <>
+      <Home />
+      <GlobalStyle />
+    </>
+  );
+};
 
 export default App;
