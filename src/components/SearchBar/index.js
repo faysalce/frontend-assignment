@@ -26,7 +26,7 @@ const SearchBar = ({ callback }) => {
         <StyledSearchBarContent>
           <div className="header">
             <div className="logo">
-              <img src={logo} />
+              <img src={logo} alt="Timescale Logo" />
             </div>
             <div className="search-box">
 

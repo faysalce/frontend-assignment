@@ -19,7 +19,7 @@ const MovieCard = ({ image, movieId, movieName }) => {
   if (error) return <div>Something went wrong ...</div>;
   if (loading) return <Spinner />;
   return (
-    <StyledMovieCard key={movieId}
+    <StyledMovieCard
     onClick={() => setModal(true)}
     >
       <>

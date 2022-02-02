@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import axios from "axios"
 // Environment Variables
-import { POPULAR_BASE_URL } from '../constant';
+import { LATEST_MOVIE_BASE_URL } from '../constant';
 
 export const useMovieList = searchTerm => {
   const [state, setState] = useState({ movies: [] });
@@ -30,7 +30,7 @@ export const useMovieList = searchTerm => {
       setState(JSON.parse(sessionStorage.homeState));
       setLoading(false);
     } else {
-      fetchMovies(POPULAR_BASE_URL);
+      fetchMovies(LATEST_MOVIE_BASE_URL);
     }
   }, []);
 

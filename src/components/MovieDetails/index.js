@@ -1,13 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-// Components
-import MovieCard from "../MovieCard";
 
 // Images
 
 // Environment Variables
-import { IMAGE_BASE_URL, POSTER_SIZE } from "../../constant";
+import { MOVIE_IMAGE_BASE_URL } from "../../constant";
 
 // Styled Components
 import { StyledMovieDetails } from "./Style";
@@ -18,8 +16,8 @@ const MovieDetails = ({ movie }) => (
     <div className="moviedetails-content">
       <div className="moviedetails-thumb">
        <img src={movie.poster_path
-              ? `${IMAGE_BASE_URL}${POSTER_SIZE}${movie.poster_path}`
-              : ""} />
+              ? `${MOVIE_IMAGE_BASE_URL}/${movie.poster_path}`
+              : ""} alt={movie.title} />
       </div>
       <div className="moviedetails-text">
         <h3 className="release-date">Release date: <span>{movie.release_date.toString('dddd MMMM ,yyyy')}</span></h3>

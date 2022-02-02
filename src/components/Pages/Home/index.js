@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
 import {
-  POPULAR_BASE_URL,
-  SEARCH_BASE_URL,
-  POSTER_SIZE,
-  IMAGE_BASE_URL,
+  LATEST_MOVIE_BASE_URL,
+  MOVIE_SEARCH_BASE_URL,
+  MOVIE_IMAGE_BASE_URL,
 } from "../../../constant";
 
 // Components
@@ -32,7 +31,7 @@ const Home = () => {
   ] = useMovieList(searchTerm);
 
   const searchMovies = (search) => {
-    const endpoint = search ? SEARCH_BASE_URL + search : POPULAR_BASE_URL;
+    const endpoint = search ? MOVIE_SEARCH_BASE_URL + search : LATEST_MOVIE_BASE_URL;
 
     setSearchTerm(search);
     fetchMovies(endpoint);
@@ -54,7 +53,7 @@ const Home = () => {
 
               image={
                 movie.poster_path
-                  ? IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                  ? MOVIE_IMAGE_BASE_URL+"/" + movie.poster_path
                   : ""
               }
               movieId={movie.id}
