@@ -1,8 +1,8 @@
 
 import React from "react";
-import logo from './logo.svg';
 
-import Home from "./Home";
+import Home from "./Pages/Home";
+
 import { GlobalStyle } from "./GlobalStyle";
 
 const App = () => {
