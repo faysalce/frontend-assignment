@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import axios from "axios"
 // Environment Variables
 import { LATEST_MOVIE_BASE_URL } from '../constant';
 
@@ -13,7 +12,7 @@ export const useMovieList = searchTerm => {
     setLoading(true);
 
     try {
-      const result = await (axios.get(endpoint)).json();
+      const result = await (await fetch(endpoint)).json();
       setState(prev => ({
         ...prev,
         movies:[...result.results]

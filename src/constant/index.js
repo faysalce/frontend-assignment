@@ -5,7 +5,7 @@ const API_KEY = process.env.REACT_APP_MOVIE_DB_API_KEY;
 
 const MOVIE_SEARCH_BASE_URL = `${API_URL}/search/movie?api_key=${API_KEY}&query=`;
 
-const LATEST_MOVIE_BASE_URL = `${API_URL}/movie/latest?api_key=${API_KEY}`;
+const LATEST_MOVIE_BASE_URL = `${API_URL}/movie/popular?api_key=${API_KEY}`;
 
 
 const MOVIE_IMAGE_BASE_URL = process.env.REACT_APP_API_BASE_IMAGE_URL;

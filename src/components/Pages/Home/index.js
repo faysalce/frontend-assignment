@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 
 import {
   LATEST_MOVIE_BASE_URL,
@@ -36,6 +36,12 @@ const Home = () => {
     setSearchTerm(search);
     fetchMovies(endpoint);
   };
+  useEffect(() => {
+    return () => {
+      fetchMovies(LATEST_MOVIE_BASE_URL);
+    }
+    
+  }, []);
 
   if (error) return <div>Something went wrong ...</div>;
   if (!movies[0]) return <Spinner />;
@@ -47,9 +53,8 @@ const Home = () => {
 
       <MovieList header={searchTerm ? "Search Result" : "Most Recent Movies"}>
         {movies.map((movie) => (
-          <>
             <MovieCard
-              key={movie.id}
+              key={movie.id.toString()}
 
               image={
                 movie.poster_path
@@ -59,7 +64,6 @@ const Home = () => {
               movieId={movie.id}
               movieName={movie.title}
             />
-          </>
         ))}
       </MovieList>
 
