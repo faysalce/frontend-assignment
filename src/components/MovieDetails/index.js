@@ -20,7 +20,7 @@ const MovieDetails = ({ movie }) => (
               : ""} alt={movie.title} />
       </div>
       <div className="moviedetails-text">
-        <h3 className="release-date">Release date: <span>{movie.release_date.toString('dddd MMMM ,yyyy')}</span></h3>
+        <h3 className="release-date">Release date: <span>{new Date(movie.release_date).toLocaleDateString('en-us', { year:"numeric", month:"short", day:"numeric"})}</span></h3>
         <p className="movie-description">{movie.overview}</p>
 
         <div className="movie-vote">
